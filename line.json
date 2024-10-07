@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "line.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": {
+      "type": "line",
+      "point": {"size": 75, "filled": true}
+    },
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "axis": {
+          "title": "Year",
+          "labelAngle": 45
+        }
+      },
+      "y": {
+        "field": "Score",
+        "type": "quantitative",
+        "axis": {"title": "NAPLAN Score"},
+        "scale": {"domain": [500, 600]}
+      },
+      "color": {
+        "field": "Year Level",
+        "type": "nominal",
+        "legend": {"title": "Year Level"}
+      },
+      "tooltip": [
+        {"field": "Year", "type": "ordinal", "title": "Year"},
+        {"field": "Year Level", "type": "nominal", "title": "Year Level"},
+        {"field": "Score", "type": "quantitative", "title": "NAPLAN Score"}
+      ]
+    },
+    "config": {
+      "line": {
+        "strokeWidth": 3
+      },
+      "axis": {
+        "grid": true
+      }
+    }
+  }
+  

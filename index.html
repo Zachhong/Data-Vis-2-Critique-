@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education and Employment in Australia</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .visualisation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .description {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Education and Employment in Australia</h1>
+
+    <!-- Map Visualisation -->
+    <div class="visualisation" id="map"></div>
+    <div class="description" id="mapDescription">This map highlights the percentage of people aged 15-24 who are fully engaged in work and/or study across Australia's states and territories. The darker the shading, the higher the percentage of engagement. This allows for a visual comparison of youth participation in education and employment across regions.</div>
+
+    <!-- Bubble Plot Visualisation -->
+    <div class="visualisation" id="bubble"></div>
+    <div class="description" id="bubbleDescription">This bubble plot compares male and female employment outcomes by field of study. The size of the bubbles represents full-time employment percentages, and the colour distinguishes gender, with blue for males and pink for females. The chart helps visualise gender disparities and employment outcomes across different fields.</div>
+
+    <!-- Line Chart Visualisation -->
+    <div class="visualisation" id="line"></div>
+    <div class="description" id="lineDescription">This line chart presents the average NAPLAN scores for Years 3, 5, 7, and 9 over time from 2012 to 2022. It highlights trends in educational performance across these years, allowing for an analysis of how performance has changed over time for each grade level.</div>
+
+    <script type="text/javascript">
+        // Embed the map visualisation
+        vegaEmbed('#map', 'map.json').catch(console.error);
+
+        // Embed the bubble plot visualisation
+        vegaEmbed('#bubble', 'bubble.json').catch(console.error);
+
+        // Embed the line chart visualisation
+        vegaEmbed('#line', 'line.json').catch(console.error);
+    </script>
+</body>
+</html>
